@@ -61,18 +61,20 @@
           </div>
           <div class="card-body" id="articles">
 
-            
+
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
               </div>
             </div>
 
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
               </div>
             </div>
 
@@ -96,15 +98,32 @@
   </script>
 
   <script>
+    function fillArticles(articles) {
 
-    $('#searchBtn').on('click', function() {
+      $('#articles').empty()
+
+      for (let i = 0; i < articles.length; i++) {
+        const article = articles[i];
+
+        let card = $('<div>').addClass('card')
+        let cardBody = $('<div>').addClass('card-body')
+        let cardTitle = $('h5').text(article.headline)
+        let cardText = $('p')
+          .addClass('card-text')
+          .text(article.body)
+        cardBody.append(cardTitle, cardText)
+        card.append(cardBody)
+        
+      }
+    }
+
+    $('#searchBtn').on('click', function () {
 
     })
 
-    $('#clearBtn').on('click', function() {
+    $('#clearBtn').on('click', function () {
       $('#articles').empty()
     })
-  
   </script>
 </body>
 
