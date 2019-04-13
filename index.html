@@ -105,10 +105,10 @@
 
     $('#searchBtn').on('click', function () {
 
-      var search = $('#textInput').val()
-      var number = $('#numberInput').val()
-      var startYear = $('#startYearInput').vel()
-      var endYear = $('#endYearInput').vel()
+      var search = $('#textInput').val().trim()
+      var number = $('#numberInput').val().trim()
+      var startYear = $('#startYearInput').val().trim()
+      var endYear = $('#endYearInput').val().trim()
 
       var url = ''
 
